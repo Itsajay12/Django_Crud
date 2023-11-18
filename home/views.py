@@ -18,3 +18,7 @@ def update(request,email):
         Login.objects.filter(email = email).update(name=request.POST['name'],password=request.POST['password'])
         return index(request)
     return render(request,'update.html',{"query":query})
+def delete(request,email):
+    Login.objects.filter(email=email).delete()
+    
+    return index(request)

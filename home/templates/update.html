@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="post">
+<form method="post" class="container bg-warning p-5">
     {% csrf_token %}
     {% for val in query %}
     
@@ -19,7 +19,7 @@
       <input type="text" name="password" class="form-control" id="exampleInputPassword1" value="{{val.password}}">
     </div>
    
-    
+
     {% endfor %}
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

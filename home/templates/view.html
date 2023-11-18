@@ -7,7 +7,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
-        <th>Edit</th>
+        <th>Edit/Remove</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,10 @@
         <td>{{val.name}}</td>
         <td>{{val.email}}</td>
         <td>{{val.password}}</td>
-        <td> <a href="{% url "update" val.email %}">Update</a></td>
+        <td> <a href="{% url "update" val.email %}">Update</a>
+            <a href="{% url "delete" val.email %}">Delete</a></td>
+       
+
 
       </tr>
      {% endfor %}

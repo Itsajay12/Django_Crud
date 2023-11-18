@@ -23,5 +23,6 @@ urlpatterns = [
     path('',index,name='index'),
     path('forms/',forms,name='forms'),
     path('views/',view,name='views'),
-    path('update/<str:email>',update,name='update')
+    path('update/<str:email>',update,name='update'),
+    path('delete/<str:email>',delete,name='delete')
 ]
