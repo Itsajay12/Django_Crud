@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <table class="table container mt-5 table-danger">
+  <table class="table container mt-5 table-danger shadow-lg bg-warning">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -26,9 +26,9 @@
             <td>No Images</td>
           {% endif %}
 
-          <td>
-            <a href="{% url 'update' val.email %}">Update</a>
-            <a href="{% url 'delete' val.email %}">Delete</a>
+          <td class="d-flex justify-content-evenly  ">
+            <a href="{% url 'update' val.email %}"><i class="bi bi-pencil-square" style="color: purple;font-size: 1.5rem;"></i></a>
+            <a href="{% url 'delete' val.email %}"><i class="bi bi-trash3" style="color: red;font-size: 1.5rem;"></i></a>
           </td>
         </tr>
       {% endfor %}
