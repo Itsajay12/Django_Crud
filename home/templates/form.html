@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="post"class="container bg-success p-5">
+<form method="post"class="container bg-success p-5 shadow-lg" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -16,10 +16,11 @@
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
     </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Profile Picture</label>
+      <input type="file" name="file1" class="form-control" id="exampleInputPassword1" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+   
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
   </form>
 {% endblock content %}

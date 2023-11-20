@@ -1,30 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-<table class="table container mt-5 table-danger">
+  <table class="table container mt-5 table-danger">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Password</th>
+        <th scope="col">Profile Picture</th>
         <th>Edit/Remove</th>
       </tr>
     </thead>
     <tbody>
-     {% for val in query %}
-     <tr>
-        <th scope="row">{{forloop.counter}}</th>
-        <td>{{val.name}}</td>
-        <td>{{val.email}}</td>
-        <td>{{val.password}}</td>
-        <td> <a href="{% url "update" val.email %}">Update</a>
-            <a href="{% url "delete" val.email %}">Delete</a></td>
-       
+      {% for val in query %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ val.name }}</td>
+          <td>{{ val.email }}</td>
+          <td>{{ val.password }}</td>
+          {% if val.profile_pic %}
+            <td>
+              <img src="{{ val.profile_pic }}" alt="" />
+            </td>
+          {% else %}
+            <td>No Images</td>
+          {% endif %}
 
-
-      </tr>
-     {% endfor %}
-     
+          <td>
+            <a href="{% url 'update' val.email %}">Update</a>
+            <a href="{% url 'delete' val.email %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
-{% endblock content %}
+{% endblock %}
