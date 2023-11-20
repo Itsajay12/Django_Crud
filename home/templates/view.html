@@ -20,7 +20,7 @@
           <td>{{ val.password }}</td>
           {% if val.profile_pic %}
             <td>
-              <img src="{{ val.profile_pic }}" alt="" />
+              <img src="{{ val.profile_pic.url}}" alt=""  width="150px" height="150px" style="background-repeat: no-repeat;object-fit: cover;"/>
             </td>
           {% else %}
             <td>No Images</td>

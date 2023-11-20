@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-  <form method="post" class="container bg-warning p-5">
+  <form method="post" class="container bg-warning p-5" enctype="multipart/form-data">
     {% csrf_token %}
     {% for val in query %}
       <div class="mb-3">
@@ -16,6 +16,11 @@
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="text" name="password" class="form-control" id="exampleInputPassword1" value="{{ val.password }}" required />
+      </div>
+      <div class="mb-3">
+       
+        <label for="exampleInputPassword1" class="form-label">Profile Picture</label>
+        <input type="file" name="file1" class="form-control" id="exampleInputPassword1" value="{{val.profile_pic.url}}" >
       </div>
     {% endfor %}
     <button type="submit" class="btn btn-primary">Submit</button>
